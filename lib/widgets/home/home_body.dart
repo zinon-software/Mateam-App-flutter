@@ -35,7 +35,7 @@ class HomeBody extends StatelessWidget {
                       if (snapshot.data == null) {
                         return Container(
                           child: Center(
-                            child: Text("Loading ........"),
+                            child: Text(" في انتظار الشبكة........ "),
                           ),
                         );
                       } else {
