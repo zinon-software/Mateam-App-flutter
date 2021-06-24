@@ -9,14 +9,13 @@ class FetchApi {
         await http.get(Uri.parse("https://mateamm.herokuapp.com/api/v2/products"));
 
     if (response.statusCode == 200) {
-      var body = jsonDecode(response.body);
+      var body = jsonDecode(utf8.decode(response.bodyBytes));
 
       List<ProductsModel> product = [];
 
       for (var item in body) {
         product.add(ProductsModel.fromJson(item));
       }
-      print("the count is " + product.length.toString());
       return product;
     }
     return null;
